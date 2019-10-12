@@ -1,24 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  if (window.DeviceOrientationEvent) {
+    
+    alert( "Supported!");
+  }else{
+    alert( "NO Supported!");
+  }
+  window.addEventListener("deviceorientation",function(event) {
+    let alpha = Math.round(event.alpha);
+    let beta = Math.round(event.beta);
+    let gamma = Math.round(event.gamma);
+    let mostrar1=document.getElementById('mostrar1')
+    let mostrar2=document.getElementById('mostrar2')
+    let mostrar3=document.getElementById('mostrar3')
+    mostrar1.innerHTML=`eje Z: ${alpha}`;
+    mostrar2.innerHTML=`eje x: ${beta}`;
+    mostrar3.innerHTML=`eje y: ${gamma}`;
+    
+
+  }, true);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    
+        <p id="mostrar1">
+         este es el contenido de p
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p id="mostrar2">
+         este es el contenido de p
+        </p>
+        <p id="mostrar3">
+         este es el contenido de p
+        </p>
+        <p id="doeSupported"></p>
+        <p id="mostrar4">    
+        </p>
+        
     </div>
   );
 }
