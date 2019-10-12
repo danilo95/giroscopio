@@ -34,7 +34,8 @@ function App() {
          este es el contenido de p
         </p>
         <p id="doeSupported"></p>
-        <p id="mostrar4">    
+        <p id="mostrar4">   
+        aceleracion info 
         </p>
         
     </div>
