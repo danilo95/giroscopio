@@ -18,9 +18,12 @@ function App() {
     mostrar1.innerHTML=`eje Z: ${alpha}`;
     mostrar2.innerHTML=`eje x: ${beta}`;
     mostrar3.innerHTML=`eje y: ${gamma}`;
-    
-
   }, true);
+  window.addEventListener('devicemotion', function(event) {
+    let aceleration=event.acceleration.x;
+    let mostrar4=document.getElementById('mostrar4')
+    mostrar4.innerHTML=`aceleration: ${aceleration}`;
+  });
   return (
     <div className="App">
     
